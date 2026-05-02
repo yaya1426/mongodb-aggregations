@@ -1,29 +1,64 @@
 # Lesson 00: Setup And Seed Data
 
-## Problem
+In this lesson, you prepare the MongoDB database used by the whole workshop.
 
-Before writing queries, we need a small database that feels like a real website.
+We are building a small library website. The website has books, authors, users, reviews, and reading activity.
 
-The app idea is a library website where users can browse books, see authors, read ratings, and discover popular books.
+## Goal
 
-## Atlas Setup
+By the end of this lesson, your Atlas database should contain sample data that all later lessons can query.
 
-1. Create or open a MongoDB Atlas cluster.
-2. Create a database named `library_workshop`.
-3. Create these collections:
-   - `authors`
-   - `books`
-   - `users`
-   - `reviews`
-   - `reading_events`
-4. Insert the matching JSON from the `data/` folder into each collection.
+## Collections
 
-## Why String IDs?
+Create a database named `library_workshop` with these collections:
 
-The sample data uses readable string IDs such as `book-the-moon-garden` and `author-leo-rivera`.
+- `authors`
+- `books`
+- `users`
+- `reviews`
+- `reading_events`
 
-This makes the workshop easier to teach because students can understand relationships before learning about `ObjectId`.
+## Seed The Data
 
-## What Students Should Know By The End
+Copy each JSON file from `data/` into its matching collection:
 
-Students should understand that MongoDB stores related business data as documents in collections, and that the same dataset can be queried in different ways depending on the product feature.
+- `data/authors.json` -> `authors`
+- `data/books.json` -> `books`
+- `data/users.json` -> `users`
+- `data/reviews.json` -> `reviews`
+- `data/reading_events.json` -> `reading_events`
+
+If your Atlas screen only accepts one document at a time, use MongoDB Compass import or the seed script in `lessons/11-nodejs-library-api/`.
+
+## Why The IDs Are Strings
+
+MongoDB requires every document to have a unique `_id` inside its collection. That `_id` does not have to be an `ObjectId`.
+
+This workshop uses readable string IDs such as:
+
+```json
+"_id": "book-the-moon-garden"
+```
+
+That makes relationships easier to see when we later join collections:
+
+```json
+"authorIds": ["author-leo-rivera"]
+```
+
+## Quick Check
+
+After inserting the data, run this in Atlas, Compass, or MongoDB Shell:
+
+```js
+use("library_workshop");
+
+db.books.countDocuments();
+db.authors.countDocuments();
+```
+
+You should see books and authors in the database before continuing.
+
+## Tip
+
+If a later query returns no results, come back here and confirm you are using the `library_workshop` database and that the collection names are spelled exactly as shown.

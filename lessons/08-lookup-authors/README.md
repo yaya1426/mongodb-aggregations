@@ -1,23 +1,46 @@
 # Lesson 08: Lookup Authors
 
-## Problem
+This lesson joins books with their authors.
 
-The book collection stores author IDs, but the website needs to show author names on each book card.
+The `books` collection stores author IDs, but the website needs to display author names on each book card.
 
-This requires combining data from two collections.
+## Run This File
 
-## Concepts
+Open and run examples from:
 
-- `$lookup`
-- Local and foreign fields
-- Joining arrays of IDs
-- Reshaping joined documents with `$map`
+```text
+aggregation.mongodb.js
+```
+
+## What You Will Learn
+
+- How `$lookup` connects documents from another collection.
+- How `localField` and `foreignField` match values.
+- How to join when the local field is an array.
+- How `$map` reshapes joined documents.
 
 ## Collections Used
 
 - `books`
 - `authors`
 
-## Teaching Goal
+## Key Idea
 
-Students should understand that `$lookup` lets one aggregation pipeline read related documents from another collection.
+MongoDB documents often store references to related documents. `$lookup` lets an aggregation pipeline fetch those related documents.
+
+In this lesson:
+
+```text
+books.authorIds -> authors._id
+```
+
+## Tips
+
+- `$lookup` returns an array, even if it finds only one matching document.
+- The `from` value must be the collection name, not the database name.
+- String IDs must match exactly.
+- Use `$project` after `$lookup` to avoid returning large nested documents you do not need.
+
+## Try It Yourself
+
+Add `bio` to the author output, then remove it again to keep the book card response small.
