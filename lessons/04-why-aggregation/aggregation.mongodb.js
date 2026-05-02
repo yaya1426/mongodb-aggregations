@@ -26,10 +26,13 @@ db.books.aggregate([
       tagCount: {
         $size: "$tags"
       },
-      // $concat joins strings. $toString converts the number price into text.
+      // $concat joins strings. $literal tells MongoDB "$" is text, not a field path.
+      // $toString converts the number price into text.
       displayPrice: {
         $concat: [
-          "$",
+          {
+            $literal: "$"
+          },
           {
             $toString: "$price"
           }
