@@ -45,6 +45,7 @@ function bookCardProject() {
 
 function withAuthorsAndRatings() {
   return [
+    // Stage: $lookup joins author documents for each book.
     {
       $lookup: {
         from: "authors",
@@ -53,6 +54,7 @@ function withAuthorsAndRatings() {
         as: "authors"
       }
     },
+    // Stage: $lookup joins review documents for each book.
     {
       $lookup: {
         from: "reviews",
@@ -61,11 +63,14 @@ function withAuthorsAndRatings() {
         as: "reviews"
       }
     },
+    // Stage: $addFields calculates fields that the API returns to the frontend.
     {
       $addFields: {
+        // $size counts the joined reviews.
         reviewCount: {
           $size: "$reviews"
         },
+        // $avg calculates the average rating, with 0 as the fallback.
         averageRating: {
           $round: [
             {
@@ -98,6 +103,7 @@ app.get("/books", async (req, res, next) => {
     const { genre } = req.query;
 
     const pipeline = [
+      // Stage 1: keep available books, and optionally filter by genre.
       {
         $match: {
           stock: { $gt: 0 },
@@ -105,11 +111,13 @@ app.get("/books", async (req, res, next) => {
         }
       },
       ...withAuthorsAndRatings(),
+      // Stage 5: sort the API result by title after authors and ratings are added.
       {
         $sort: {
           title: 1
         }
       },
+      // Stage 6: shape each book as a frontend book card.
       {
         $project: bookCardProject()
       }
@@ -126,12 +134,14 @@ app.get("/books", async (req, res, next) => {
 app.get("/books/:id", async (req, res, next) => {
   try {
     const pipeline = [
+      // Stage 1: find the requested book by route parameter.
       {
         $match: {
           _id: req.params.id
         }
       },
       ...withAuthorsAndRatings(),
+      // Stage 5: shape the detail response with extra fields.
       {
         $project: {
           ...bookCardProject(),
@@ -160,11 +170,13 @@ app.get("/books/:id", async (req, res, next) => {
 app.get("/books/:id/reviews-summary", async (req, res, next) => {
   try {
     const pipeline = [
+      // Stage 1: find the requested book.
       {
         $match: {
           _id: req.params.id
         }
       },
+      // Stage 2: join reviews using a lookup pipeline so they can be sorted.
       {
         $lookup: {
           from: "reviews",
@@ -172,6 +184,7 @@ app.get("/books/:id/reviews-summary", async (req, res, next) => {
             bookId: "$_id"
           },
           pipeline: [
+            // Inner stage 1: keep reviews for the current book only.
             {
               $match: {
                 $expr: {
@@ -179,6 +192,7 @@ app.get("/books/:id/reviews-summary", async (req, res, next) => {
                 }
               }
             },
+            // Inner stage 2: newest reviews first.
             {
               $sort: {
                 createdAt: -1
@@ -188,6 +202,7 @@ app.get("/books/:id/reviews-summary", async (req, res, next) => {
           as: "reviews"
         }
       },
+      // Stage 3: calculate review summary fields for the API response.
       {
         $project: {
           _id: 1,
@@ -244,11 +259,13 @@ app.get("/books/:id/reviews-summary", async (req, res, next) => {
 app.get("/authors/:id/books", async (req, res, next) => {
   try {
     const pipeline = [
+      // Stage 1: find the requested author.
       {
         $match: {
           _id: req.params.id
         }
       },
+      // Stage 2: join books whose authorIds array contains this author ID.
       {
         $lookup: {
           from: "books",
@@ -257,6 +274,7 @@ app.get("/authors/:id/books", async (req, res, next) => {
           as: "books"
         }
       },
+      // Stage 3: return author details plus a smaller books array.
       {
         $project: {
           _id: 1,
@@ -297,6 +315,7 @@ app.get("/authors/:id/books", async (req, res, next) => {
 app.get("/genres/stats", async (req, res, next) => {
   try {
     const pipeline = [
+      // Stage 1: group books by genre and calculate summary values.
       {
         $group: {
           _id: "$genre",
@@ -310,6 +329,7 @@ app.get("/genres/stats", async (req, res, next) => {
           totalStock: { $sum: "$stock" }
         }
       },
+      // Stage 2: rename _id to genre and round the average price.
       {
         $project: {
           _id: 0,
@@ -322,6 +342,7 @@ app.get("/genres/stats", async (req, res, next) => {
           totalStock: 1
         }
       },
+      // Stage 3: sort the most common genres first.
       {
         $sort: {
           bookCount: -1,
@@ -342,8 +363,10 @@ app.get("/homepage", async (req, res, next) => {
   try {
     const pipeline = [
       ...withAuthorsAndRatings(),
+      // Stage 4: $facet builds multiple homepage sections in one response.
       {
         $facet: {
+          // Featured books section.
           featuredBooks: [
             {
               $match: {
@@ -363,6 +386,7 @@ app.get("/homepage", async (req, res, next) => {
               $project: bookCardProject()
             }
           ],
+          // New arrivals section.
           newArrivals: [
             {
               $match: {
@@ -381,6 +405,7 @@ app.get("/homepage", async (req, res, next) => {
               $project: bookCardProject()
             }
           ],
+          // Top-rated books section.
           topRated: [
             {
               $match: {
@@ -415,16 +440,19 @@ app.get("/homepage", async (req, res, next) => {
 app.get("/courses/featured", async (req, res, next) => {
   try {
     const pipeline = [
+      // Stage 1: keep only courses marked as featured.
       {
         $match: {
           featured: true
         }
       },
+      // Stage 2: use sortOrder to control display order in the frontend.
       {
         $sort: {
           sortOrder: 1
         }
       },
+      // Stage 3: return only course card fields.
       {
         $project: {
           _id: 1,
