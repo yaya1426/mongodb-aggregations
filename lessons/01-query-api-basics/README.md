@@ -14,6 +14,44 @@ queries.mongodb.js
 
 Run one query at a time so you can inspect the result.
 
+## Connect With `mongosh`
+
+`mongosh` is the MongoDB Shell. It lets you connect to MongoDB Atlas from your terminal and run the same queries you see in this lesson.
+
+Install it from the MongoDB docs if you do not already have it:
+
+```text
+https://www.mongodb.com/docs/mongodb-shell/install/
+```
+
+Connection format:
+
+```bash
+mongosh "mongodb+srv://<cluster-host>/" --apiVersion 1 --username <username>
+```
+
+For this workshop, the Atlas cluster connection looks like this:
+
+```bash
+mongosh "mongodb+srv://wazifa-production.jdvjgn8.mongodb.net/" --apiVersion 1 --username wazifa_db_user
+```
+
+`mongosh` will ask you to enter the password after you run the command. This keeps the password out of the command history and out of GitHub.
+
+After connecting, select the workshop database:
+
+```js
+use("library_workshop");
+```
+
+Then run a quick check:
+
+```js
+db.books.findOne();
+```
+
+Important: do not commit a real password to GitHub. If you create a temporary student database user, share the username and password during the session and rotate or delete that user after the workshop.
+
 ## What You Will Learn
 
 - How to use `find()` to return many documents.
