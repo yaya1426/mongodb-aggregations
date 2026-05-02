@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "user-amina",
+    "name": "Amina Saleh",
+    "email": "amina@example.com",
+    "favoriteGenres": ["Mystery", "History"],
+    "createdAt": "2024-01-05T10:00:00Z"
+  },
+  {
+    "_id": "user-daniel",
+    "name": "Daniel Chen",
+    "email": "daniel@example.com",
+    "favoriteGenres": ["Technology", "Science Fiction"],
+    "createdAt": "2024-01-11T12:30:00Z"
+  },
+  {
+    "_id": "user-fatima",
+    "name": "Fatima Noor",
+    "email": "fatima@example.com",
+    "favoriteGenres": ["Cooking", "Children"],
+    "createdAt": "2024-02-02T09:15:00Z"
+  },
+  {
+    "_id": "user-jonas",
+    "name": "Jonas Meyer",
+    "email": "jonas@example.com",
+    "favoriteGenres": ["Science Fiction", "Nonfiction"],
+    "createdAt": "2024-02-18T16:45:00Z"
+  },
+  {
+    "_id": "user-lina",
+    "name": "Lina Haddad",
+    "email": "lina@example.com",
+    "favoriteGenres": ["Children", "Mystery"],
+    "createdAt": "2024-03-04T13:25:00Z"
+  }
+]

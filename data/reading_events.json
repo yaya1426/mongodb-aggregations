@@ -1,0 +1,128 @@
+[
+  {
+    "_id": "event-001",
+    "bookId": "book-clean-architecture-for-teams",
+    "userId": "user-daniel",
+    "eventType": "viewed",
+    "createdAt": "2024-05-01T08:00:00Z"
+  },
+  {
+    "_id": "event-002",
+    "bookId": "book-clean-architecture-for-teams",
+    "userId": "user-daniel",
+    "eventType": "saved",
+    "createdAt": "2024-05-01T08:02:00Z"
+  },
+  {
+    "_id": "event-003",
+    "bookId": "book-practical-node-apis",
+    "userId": "user-daniel",
+    "eventType": "viewed",
+    "createdAt": "2024-05-02T09:30:00Z"
+  },
+  {
+    "_id": "event-004",
+    "bookId": "book-the-moon-garden",
+    "userId": "user-jonas",
+    "eventType": "viewed",
+    "createdAt": "2024-05-03T12:15:00Z"
+  },
+  {
+    "_id": "event-005",
+    "bookId": "book-the-moon-garden",
+    "userId": "user-lina",
+    "eventType": "saved",
+    "createdAt": "2024-05-03T12:20:00Z"
+  },
+  {
+    "_id": "event-006",
+    "bookId": "book-rivers-of-mars",
+    "userId": "user-jonas",
+    "eventType": "started",
+    "createdAt": "2024-05-04T19:45:00Z"
+  },
+  {
+    "_id": "event-007",
+    "bookId": "book-cities-through-time",
+    "userId": "user-amina",
+    "eventType": "viewed",
+    "createdAt": "2024-05-05T10:10:00Z"
+  },
+  {
+    "_id": "event-008",
+    "bookId": "book-maps-and-memory",
+    "userId": "user-amina",
+    "eventType": "saved",
+    "createdAt": "2024-05-06T15:00:00Z"
+  },
+  {
+    "_id": "event-009",
+    "bookId": "book-max-and-the-lighthouse",
+    "userId": "user-fatima",
+    "eventType": "viewed",
+    "createdAt": "2024-05-07T16:20:00Z"
+  },
+  {
+    "_id": "event-010",
+    "bookId": "book-max-and-the-lighthouse",
+    "userId": "user-lina",
+    "eventType": "finished",
+    "createdAt": "2024-05-08T18:30:00Z"
+  },
+  {
+    "_id": "event-011",
+    "bookId": "book-the-secret-shelf",
+    "userId": "user-lina",
+    "eventType": "viewed",
+    "createdAt": "2024-05-09T14:10:00Z"
+  },
+  {
+    "_id": "event-012",
+    "bookId": "book-weeknight-table",
+    "userId": "user-fatima",
+    "eventType": "saved",
+    "createdAt": "2024-05-10T07:30:00Z"
+  },
+  {
+    "_id": "event-013",
+    "bookId": "book-bread-and-sun",
+    "userId": "user-fatima",
+    "eventType": "viewed",
+    "createdAt": "2024-05-10T07:35:00Z"
+  },
+  {
+    "_id": "event-014",
+    "bookId": "book-the-archive-room",
+    "userId": "user-amina",
+    "eventType": "finished",
+    "createdAt": "2024-05-11T22:00:00Z"
+  },
+  {
+    "_id": "event-015",
+    "bookId": "book-the-archive-room",
+    "userId": "user-lina",
+    "eventType": "viewed",
+    "createdAt": "2024-05-12T13:25:00Z"
+  },
+  {
+    "_id": "event-016",
+    "bookId": "book-last-page-club",
+    "userId": "user-amina",
+    "eventType": "viewed",
+    "createdAt": "2024-05-13T09:05:00Z"
+  },
+  {
+    "_id": "event-017",
+    "bookId": "book-last-page-club",
+    "userId": "user-amina",
+    "eventType": "saved",
+    "createdAt": "2024-05-13T09:08:00Z"
+  },
+  {
+    "_id": "event-018",
+    "bookId": "book-the-moon-garden",
+    "userId": "user-daniel",
+    "eventType": "viewed",
+    "createdAt": "2024-05-14T11:45:00Z"
+  }
+]

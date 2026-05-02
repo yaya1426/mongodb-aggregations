@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "author-maya-hart",
+    "name": "Maya Hart",
+    "bio": "Writes practical guides about software design and teamwork.",
+    "country": "Canada",
+    "birthYear": 1982,
+    "genres": ["Technology", "Business"]
+  },
+  {
+    "_id": "author-leo-rivera",
+    "name": "Leo Rivera",
+    "bio": "Novelist known for hopeful science fiction stories.",
+    "country": "Mexico",
+    "birthYear": 1976,
+    "genres": ["Science Fiction"]
+  },
+  {
+    "_id": "author-nora-khan",
+    "name": "Nora Khan",
+    "bio": "Historian focused on cities, migration, and everyday life.",
+    "country": "United Kingdom",
+    "birthYear": 1969,
+    "genres": ["History", "Nonfiction"]
+  },
+  {
+    "_id": "author-sam-owens",
+    "name": "Sam Owens",
+    "bio": "Children's author who writes warm adventure stories.",
+    "country": "United States",
+    "birthYear": 1990,
+    "genres": ["Children", "Adventure"]
+  },
+  {
+    "_id": "author-anya-miles",
+    "name": "Anya Miles",
+    "bio": "Food writer interested in simple home cooking.",
+    "country": "Australia",
+    "birthYear": 1985,
+    "genres": ["Cooking", "Lifestyle"]
+  },
+  {
+    "_id": "author-omar-farouk",
+    "name": "Omar Farouk",
+    "bio": "Writes mystery novels set around old libraries and archives.",
+    "country": "Egypt",
+    "birthYear": 1979,
+    "genres": ["Mystery", "Thriller"]
+  }
+]

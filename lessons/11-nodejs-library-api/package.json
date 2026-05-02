@@ -1,0 +1,16 @@
+{
+  "name": "library-aggregation-api",
+  "version": "1.0.0",
+  "description": "Small Express API for teaching MongoDB aggregation pipelines.",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.mjs",
+    "start": "node server.mjs",
+    "seed": "node seed.mjs"
+  },
+  "dependencies": {
+    "dotenv": "latest",
+    "express": "latest",
+    "mongodb": "latest"
+  }
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "_id": "review-001",
+    "bookId": "book-clean-architecture-for-teams",
+    "userId": "user-daniel",
+    "rating": 5,
+    "comment": "Clear examples and very useful team advice.",
+    "createdAt": "2024-04-10T10:00:00Z"
+  },
+  {
+    "_id": "review-002",
+    "bookId": "book-clean-architecture-for-teams",
+    "userId": "user-amina",
+    "rating": 4,
+    "comment": "Helpful even for non-architects.",
+    "createdAt": "2024-04-12T11:10:00Z"
+  },
+  {
+    "_id": "review-003",
+    "bookId": "book-practical-node-apis",
+    "userId": "user-daniel",
+    "rating": 5,
+    "comment": "Exactly what I wanted for backend API work.",
+    "createdAt": "2024-05-01T09:20:00Z"
+  },
+  {
+    "_id": "review-004",
+    "bookId": "book-the-moon-garden",
+    "userId": "user-jonas",
+    "rating": 5,
+    "comment": "Warm, smart, and full of wonder.",
+    "createdAt": "2024-03-18T19:35:00Z"
+  },
+  {
+    "_id": "review-005",
+    "bookId": "book-the-moon-garden",
+    "userId": "user-lina",
+    "rating": 4,
+    "comment": "Beautiful world building.",
+    "createdAt": "2024-03-20T08:00:00Z"
+  },
+  {
+    "_id": "review-006",
+    "bookId": "book-rivers-of-mars",
+    "userId": "user-jonas",
+    "rating": 4,
+    "comment": "A strong start to the series.",
+    "createdAt": "2024-04-25T14:25:00Z"
+  },
+  {
+    "_id": "review-007",
+    "bookId": "book-cities-through-time",
+    "userId": "user-amina",
+    "rating": 5,
+    "comment": "Made urban history easy to understand.",
+    "createdAt": "2024-01-29T20:05:00Z"
+  },
+  {
+    "_id": "review-008",
+    "bookId": "book-cities-through-time",
+    "userId": "user-jonas",
+    "rating": 4,
+    "comment": "Dense but rewarding.",
+    "createdAt": "2024-02-05T17:45:00Z"
+  },
+  {
+    "_id": "review-009",
+    "bookId": "book-maps-and-memory",
+    "userId": "user-amina",
+    "rating": 5,
+    "comment": "The archive stories were excellent.",
+    "createdAt": "2024-05-20T12:00:00Z"
+  },
+  {
+    "_id": "review-010",
+    "bookId": "book-max-and-the-lighthouse",
+    "userId": "user-fatima",
+    "rating": 5,
+    "comment": "My kids loved it.",
+    "createdAt": "2024-02-14T18:30:00Z"
+  },
+  {
+    "_id": "review-011",
+    "bookId": "book-max-and-the-lighthouse",
+    "userId": "user-lina",
+    "rating": 4,
+    "comment": "Sweet and easy to read aloud.",
+    "createdAt": "2024-03-01T15:10:00Z"
+  },
+  {
+    "_id": "review-012",
+    "bookId": "book-weeknight-table",
+    "userId": "user-fatima",
+    "rating": 5,
+    "comment": "The recipes are realistic for busy days.",
+    "createdAt": "2024-04-02T07:50:00Z"
+  },
+  {
+    "_id": "review-013",
+    "bookId": "book-bread-and-sun",
+    "userId": "user-fatima",
+    "rating": 4,
+    "comment": "Great weekend baking ideas.",
+    "createdAt": "2024-05-06T11:45:00Z"
+  },
+  {
+    "_id": "review-014",
+    "bookId": "book-the-archive-room",
+    "userId": "user-amina",
+    "rating": 5,
+    "comment": "A perfect mystery for library fans.",
+    "createdAt": "2024-01-12T21:15:00Z"
+  },
+  {
+    "_id": "review-015",
+    "bookId": "book-the-archive-room",
+    "userId": "user-lina",
+    "rating": 5,
+    "comment": "Atmospheric and clever.",
+    "createdAt": "2024-02-21T13:05:00Z"
+  },
+  {
+    "_id": "review-016",
+    "bookId": "book-last-page-club",
+    "userId": "user-amina",
+    "rating": 4,
+    "comment": "Fun premise and a satisfying ending.",
+    "createdAt": "2024-05-23T10:40:00Z"
+  }
+]
