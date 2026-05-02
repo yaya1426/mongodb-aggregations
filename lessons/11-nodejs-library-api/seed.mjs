@@ -13,7 +13,8 @@ const collections = [
   "books",
   "users",
   "reviews",
-  "reading_events"
+  "reading_events",
+  "yehia_tech_courses"
 ];
 
 async function readJsonCollection(collectionName) {

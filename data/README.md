@@ -9,6 +9,7 @@ Each file is a JSON array. Insert each file into the collection with the same na
 - `users.json` -> `users`
 - `reviews.json` -> `reviews`
 - `reading_events.json` -> `reading_events`
+- `yehia_tech_courses.json` -> `yehia_tech_courses`
 
 ## How To Insert The Data
 
@@ -50,6 +51,7 @@ The `_id` value must still be unique inside its collection.
 - `reviews.userId` connects reviews to `users._id`.
 - `reading_events.bookId` connects reading activity to `books._id`.
 - `reading_events.userId` connects reading activity to `users._id`.
+- `yehia_tech_courses` is standalone website content used by the frontend demo.
 
 ## Tip
 

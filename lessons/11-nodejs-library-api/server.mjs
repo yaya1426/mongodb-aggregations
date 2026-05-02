@@ -412,6 +412,42 @@ app.get("/homepage", async (req, res, next) => {
   }
 });
 
+app.get("/courses/featured", async (req, res, next) => {
+  try {
+    const pipeline = [
+      {
+        $match: {
+          featured: true
+        }
+      },
+      {
+        $sort: {
+          sortOrder: 1
+        }
+      },
+      {
+        $project: {
+          _id: 1,
+          title: 1,
+          description: 1,
+          level: 1,
+          category: 1,
+          language: 1,
+          lessonsCount: 1,
+          url: 1,
+          tags: 1
+        }
+      }
+    ];
+
+    const courses = await db().collection("yehia_tech_courses").aggregate(pipeline).toArray();
+
+    res.json({ courses });
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.use((error, req, res, next) => {
   console.error(error);
   res.status(500).json({

@@ -47,6 +47,7 @@ http://localhost:3000/homepage
 http://localhost:3000/genres/stats
 http://localhost:3000/authors/author-omar-farouk/books
 http://localhost:3000/books/book-the-archive-room/reviews-summary
+http://localhost:3000/courses/featured
 ```
 
 ## Endpoint Guide
@@ -59,6 +60,7 @@ http://localhost:3000/books/book-the-archive-room/reviews-summary
 - `GET /genres/stats` returns grouped genre summary data.
 - `GET /authors/:id/books` returns one author and their books.
 - `GET /books/:id/reviews-summary` returns rating and review summary data.
+- `GET /courses/featured` returns Yehia Tech course cards for the frontend demo.
 
 ## Key Idea
 

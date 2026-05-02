@@ -72,10 +72,33 @@ function StatCard({ label, value, hint }) {
   );
 }
 
+function CourseCard({ course }) {
+  return (
+    <a className="course-card" href={course.url} target="_blank" rel="noreferrer">
+      <div className="course-card-top">
+        <span>{course.category}</span>
+        <small>{course.level}</small>
+      </div>
+      <h3>{course.title}</h3>
+      <p>{course.description}</p>
+      <div className="course-meta">
+        <span>{course.language}</span>
+        <span>{course.lessonsCount} lessons</span>
+      </div>
+      <div className="tag-row compact">
+        {course.tags?.map((tag) => (
+          <span key={tag}>{tag}</span>
+        ))}
+      </div>
+    </a>
+  );
+}
+
 function App() {
   const [homepage, setHomepage] = useState(null);
   const [genres, setGenres] = useState([]);
   const [books, setBooks] = useState([]);
+  const [courses, setCourses] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -86,13 +109,15 @@ function App() {
     async function loadInitialData() {
       try {
         setLoading(true);
-        const [homepageResult, genreResult] = await Promise.all([
+        const [homepageResult, genreResult, coursesResult] = await Promise.all([
           apiGet("/homepage"),
-          apiGet("/genres/stats")
+          apiGet("/genres/stats"),
+          apiGet("/courses/featured")
         ]);
 
         setHomepage(homepageResult);
         setGenres(genreResult.genres || []);
+        setCourses(coursesResult.courses || []);
       } catch (err) {
         setError("Could not load data. Make sure lesson 11 API is running on port 3000.");
         console.error(err);
@@ -204,6 +229,31 @@ function App() {
                 <BookCard key={book._id} book={book} onSelect={selectBook} />
               ))}
             </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        title="Yehia Tech Courses"
+        subtitle="A small branded learning section loaded from MongoDB, just like any other website content."
+      >
+        <div className="course-band">
+          <div>
+            <p className="eyebrow">Learning Break</p>
+            <h2>Keep learning beyond this workshop.</h2>
+            <p>
+              Yehia Tech is an Arabic learning platform for practical programming courses,
+              learning paths, articles, and engineering career content.
+            </p>
+            <a className="primary-link dark" href="https://yehia.tech/" target="_blank" rel="noreferrer">
+              Visit yehia.tech
+            </a>
+          </div>
+
+          <div className="course-grid">
+            {courses.map((course) => (
+              <CourseCard key={course._id} course={course} />
+            ))}
           </div>
         </div>
       </Section>

@@ -2,7 +2,7 @@
 
 This lesson adds a small React frontend for the library website.
 
-The goal is to visualize what the aggregation API returns: homepage sections, genre stats, book cards, joined authors, and calculated ratings.
+The goal is to visualize what the aggregation API returns: homepage sections, genre stats, book cards, joined authors, calculated ratings, and a small Yehia Tech courses section.
 
 ## What You Will Learn
 
@@ -11,6 +11,7 @@ The goal is to visualize what the aggregation API returns: homepage sections, ge
 - How `$group` output can become genre statistic cards.
 - How `$lookup` output can become author names on book cards.
 - How calculated fields such as `averageRating` and `reviewCount` are useful in UI.
+- How normal website content, such as course cards, can also come from MongoDB.
 
 ## Start The Backend First
 
@@ -69,8 +70,10 @@ This keeps the lesson simple and avoids adding CORS setup while students are foc
 
 - Click a genre card to filter the book catalog.
 - Click a book card to open the detail drawer.
+- Open the Yehia Tech course cards in the middle section.
 - Compare the homepage sections with the `/homepage` endpoint from lesson 11.
 - Compare the genre cards with the `/genres/stats` endpoint from lesson 11.
+- Compare the course cards with the `/courses/featured` endpoint from lesson 11.
 
 ## Key Idea
 
@@ -82,6 +85,7 @@ For example:
 - `$lookup` adds author data to book cards.
 - `$group` creates stats that are ready to render.
 - `$project` keeps the response focused on what the UI needs.
+- The Yehia Tech section shows that the same API pattern can power marketing or learning content.
 
 ## Tip
 

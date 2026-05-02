@@ -17,6 +17,7 @@ Create a database named `library_workshop` with these collections:
 - `users`
 - `reviews`
 - `reading_events`
+- `yehia_tech_courses`
 
 ## Seed The Data
 
@@ -27,6 +28,7 @@ Copy each JSON file from `data/` into its matching collection:
 - `data/users.json` -> `users`
 - `data/reviews.json` -> `reviews`
 - `data/reading_events.json` -> `reading_events`
+- `data/yehia_tech_courses.json` -> `yehia_tech_courses`
 
 If your Atlas screen only accepts one document at a time, use MongoDB Compass import or the seed script in `lessons/11-nodejs-library-api/`.
 

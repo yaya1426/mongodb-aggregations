@@ -34,6 +34,7 @@ You can complete lessons `00` to `10` directly in Atlas or Compass without runni
    - `users`
    - `reviews`
    - `reading_events`
+   - `yehia_tech_courses`
 4. Insert the matching JSON files from `data/` into each collection.
 5. Open `lessons/README.md` and follow the lessons in order.
 
@@ -85,3 +86,4 @@ The frontend shows how aggregation results become UI sections:
 - `$group` powers genre stats.
 - `$lookup` powers author names on book cards.
 - Calculated rating fields power review summaries.
+- The Yehia Tech course section shows how normal website content can also be database-backed.

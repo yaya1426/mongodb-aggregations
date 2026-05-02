@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "course-mongodb-aggregations",
+    "title": "MongoDB Aggregations From Scratch",
+    "description": "A practical path for learning MongoDB queries, aggregation pipelines, lookups, grouping, and real API usage.",
+    "level": "Beginner",
+    "category": "Databases",
+    "language": "Arabic",
+    "lessonsCount": 12,
+    "featured": true,
+    "sortOrder": 1,
+    "url": "https://yehia.tech/",
+    "tags": ["mongodb", "aggregation", "backend"],
+    "createdAt": "2026-05-02T09:00:00Z"
+  },
+  {
+    "_id": "course-nodejs-apis",
+    "title": "Practical Node.js APIs",
+    "description": "Build backend APIs that connect to real databases and return frontend-ready responses.",
+    "level": "Intermediate",
+    "category": "Backend",
+    "language": "Arabic",
+    "lessonsCount": 18,
+    "featured": true,
+    "sortOrder": 2,
+    "url": "https://yehia.tech/",
+    "tags": ["nodejs", "express", "api"],
+    "createdAt": "2026-05-02T09:05:00Z"
+  },
+  {
+    "_id": "course-laravel-projects",
+    "title": "Laravel Practical Projects",
+    "description": "Learn Laravel through real project examples, backend structure, authentication, and database-driven features.",
+    "level": "Intermediate",
+    "category": "Backend",
+    "language": "Arabic",
+    "lessonsCount": 24,
+    "featured": true,
+    "sortOrder": 3,
+    "url": "https://yehia.tech/",
+    "tags": ["laravel", "php", "projects"],
+    "createdAt": "2026-05-02T09:10:00Z"
+  },
+  {
+    "_id": "course-career-beyond-code",
+    "title": "Think Beyond Code",
+    "description": "Career-focused lessons about engineering thinking, communication, leadership, and building better software teams.",
+    "level": "All Levels",
+    "category": "Career",
+    "language": "Arabic",
+    "lessonsCount": 10,
+    "featured": true,
+    "sortOrder": 4,
+    "url": "https://yehia.tech/",
+    "tags": ["career", "software engineering", "leadership"],
+    "createdAt": "2026-05-02T09:15:00Z"
+  }
+]
