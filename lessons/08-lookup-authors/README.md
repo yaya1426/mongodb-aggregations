@@ -40,7 +40,14 @@ books.authorIds -> authors._id
 - The `from` value must be the collection name, not the database name.
 - String IDs must match exactly.
 - Use `$project` after `$lookup` to avoid returning large nested documents you do not need.
+- `$lookup` is useful, but repeated joins can become expensive at scale. MongoDB recommends considering embedded or denormalized models when related data is frequently read together.
 
 ## Try It Yourself
 
 Add `bio` to the author output, then remove it again to keep the book card response small.
+
+## Scale Discussion
+
+After running the example, read `scaling-and-data-modeling.md`.
+
+That note explains why `$lookup` can be a performance problem at scale, when it is still reasonable, and how to reduce joins by changing the MongoDB data model.

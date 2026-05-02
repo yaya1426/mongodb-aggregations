@@ -11,7 +11,10 @@ The example project is a small library website. Visitors can browse books, filte
 - Why simple queries are not enough for some real website features.
 - How aggregation pipelines process data step by step.
 - How to use stages such as `$match`, `$project`, `$group`, `$lookup`, `$addFields`, and `$facet`.
+- Why `$lookup` is useful, but can become expensive at scale.
+- How embedding, denormalization, and computed fields can reduce repeated joins.
 - How to call aggregation pipelines from a small Node.js API.
+- How a frontend can visualize aggregation-powered API responses.
 
 ## Requirements
 
@@ -41,6 +44,7 @@ You can complete lessons `00` to `10` directly in Atlas or Compass without runni
 - `queries.mongodb.js` files use the normal MongoDB Query API.
 - `aggregation.mongodb.js` files use pure MongoDB aggregation pipelines.
 - `lessons/11-nodejs-library-api/` contains a small Express app using the MongoDB Node.js driver.
+- `lessons/12-library-frontend/` contains a small React app that visualizes the API.
 
 ## How To Run Examples
 
@@ -56,6 +60,7 @@ For MongoDB Shell, open a terminal connected to your Atlas cluster and run the `
 - `_id` does not have to be an `ObjectId`. In this workshop, readable string IDs make relationships easier to see.
 - `_id` must still be unique inside each collection.
 - If a pipeline returns no documents, first check the collection name, database name, and exact string values in `$match`.
+- Use `$lookup` to learn joins, but remember that MongoDB schema design should follow application read patterns. If data is always read together, it may belong together.
 
 ## Final Project
 
@@ -69,3 +74,14 @@ The final lesson turns the aggregation examples into real API endpoints:
 - `GET /books/:id/reviews-summary`
 
 This shows how aggregation pipelines move from the database UI into application code.
+
+## Frontend Demo
+
+After running the API in `lessons/11-nodejs-library-api/`, open `lessons/12-library-frontend/` to run a small React website.
+
+The frontend shows how aggregation results become UI sections:
+
+- `$facet` powers homepage sections.
+- `$group` powers genre stats.
+- `$lookup` powers author names on book cards.
+- Calculated rating fields power review summaries.

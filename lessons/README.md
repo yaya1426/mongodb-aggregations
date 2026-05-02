@@ -20,10 +20,11 @@ Follow these folders in order. Each lesson has a short `README.md` and one or mo
 6. `05-aggregation-basics` introduces the pipeline structure.
 7. `06-filter-sort-project` builds better list responses.
 8. `07-grouping-stats` creates summary data for genres.
-9. `08-lookup-authors` joins books to authors.
+9. `08-lookup-authors` joins books to authors and includes a scale discussion about reducing `$lookup`.
 10. `09-reviews-and-ratings` calculates review summaries.
 11. `10-homepage-with-facet` returns multiple homepage sections in one query.
 12. `11-nodejs-library-api` uses the pipelines in a running Express app.
+13. `12-library-frontend` visualizes the API as a small React website.
 
 ## Workshop Tip
 
@@ -35,3 +36,11 @@ Do not try to memorize every aggregation operator. Focus on the question each st
 - `$group`: What summary do we want?
 - `$lookup`: What related data do we need?
 - `$facet`: Which multiple result sets do we want at the same time?
+
+## Final Demo Flow
+
+Use the last two lessons together:
+
+1. Start the backend from `11-nodejs-library-api`.
+2. Start the frontend from `12-library-frontend`.
+3. Open the frontend and connect what you see on screen to the aggregation endpoints.

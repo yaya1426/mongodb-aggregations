@@ -44,6 +44,7 @@ The API does not need to fetch the book, then fetch reviews, then calculate rati
 - `$ifNull` is helpful when optional data may not exist.
 - `$avg: "$reviews.rating"` can average numeric values inside an array of joined documents.
 - Use `$slice` when the UI only needs the latest few items.
+- For high-traffic pages, consider storing `averageRating` and `reviewCount` on the book document and updating them when reviews change. MongoDB calls this the computed pattern.
 
 ## Try It Yourself
 

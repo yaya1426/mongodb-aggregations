@@ -81,3 +81,7 @@ This is the same pipeline style you used in the earlier lessons.
 - If `/health` fails, check your Atlas connection string, database user, password, and network access settings.
 - If an endpoint returns empty arrays, run `npm run seed` again and confirm `DB_NAME=library_workshop`.
 - Start by reading the `/books` route in `server.mjs`; it combines many ideas from previous lessons.
+
+## Next Lesson
+
+Keep this API running, then open `../12-library-frontend` to see these aggregation responses rendered as a website.
